@@ -7,8 +7,8 @@ export const siteConfig: SiteConfig = {
     'Thoughtful, functional and distinctive furniture design for residential and commercial spaces. Custom furniture, 3D visualization, and design consultation.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://riyacrafts.com/',
   email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || 'sachin9028273127@gmail.com',
-  phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || '+9028273127',
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+9028273127',
+  phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || '+91 9028273127',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+91 9028273127',
   address: {
     city: 'Ranchi',
     state: 'Jharkhand',
