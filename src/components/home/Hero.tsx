@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="hero" aria-label="Hero">
       <Image
-        src="/images/hero/hero-living-room.png"
+        src="https://didstxzqjqqgyjxr.public.blob.vercel-storage.com/e2c4009b-85ab-4e8e-9e79-371c705b9d0d.jpg"
         alt="Luxury modern living room with custom-designed walnut furniture, sculptural coffee table, and warm neutral tones"
         fill
         priority

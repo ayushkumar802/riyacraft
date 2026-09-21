@@ -30,7 +30,9 @@ export type ProjectCategory =
   | 'Kitchen'
   | 'Office'
   | 'Custom Furniture'
-  | 'Modular Furniture';
+  | 'Modular Furniture'
+  | 'Bathroom';
+
 
 export interface Service {
   slug: string;

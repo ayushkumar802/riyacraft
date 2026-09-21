@@ -21,15 +21,18 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
+    console.log('Submitting contact form:', data);
     setIsSubmitting(true);
     setStatus(null);
     try {
       const result = await submitContactForm(data);
+      console.log('Server action result:', result);
       setStatus(result);
       if (result.success) {
         reset();
       }
-    } catch {
+    } catch (err) {
+      console.error('Client submit error:', err);
       setStatus({
         success: false,
         message: 'Something went wrong. Please try again.',
@@ -39,16 +42,41 @@ export function ContactForm() {
     }
   };
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      {status && (
-        <div
-          className={`form-status ${status.success ? 'success' : 'error'}`}
-          role="alert"
-        >
+  // 👇 ADD IT RIGHT HERE (above the return statement)
+  if (status?.success) {
+    return (
+      <div
+        className="p-4 p-md-5 text-center"
+        style={{
+          background: 'var(--color-bg-alt)',
+          borderRadius: '8px',
+          border: '1px solid var(--color-border)',
+        }}
+      >
+        <h3 style={{ color: 'var(--color-success)', marginBottom: '1rem' }}>
+          ✓ Message Received!
+        </h3>
+        <p style={{ color: 'var(--color-secondary)', marginBottom: '1.5rem' }}>
           {status.message}
-        </div>
-      )}
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus(null)}
+          className="btn btn-outline-primary"
+        >
+          Send Another Message
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+      noValidate
+    >
 
       <div className="row g-3">
         <div className="col-md-6">
@@ -193,13 +221,16 @@ export function ContactForm() {
 
         <div className="col-12 mt-4">
           <button
-            type="submit"
+            type="button"
+            onClick={handleSubmit(onSubmit, (errs) => {
+              console.warn('Form validation failed:', errs);
+            })}
             className="btn btn-primary btn-lg"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
               <>
-                <Loader2 size={18} className="me-2" style={{ animation: 'spin 1s linear infinite' }} />
+                <Loader2 size={18} className="me-2 spin-loader" />
                 Sending…
               </>
             ) : (
@@ -210,13 +241,8 @@ export function ContactForm() {
             )}
           </button>
         </div>
-      </div>
 
-      <style jsx>{`
-        @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
+      </div>
     </form>
   );
 }

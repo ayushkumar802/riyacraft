@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { siteConfig } from '@/config/site';
-import { projects, getProjectsByCategory } from '@/data/projects';
+import { getProjects, getProjectsByCategory } from '@/data/projects';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { PortfolioFilters } from '@/components/portfolio/PortfolioFilters';
 import { ProjectGrid } from '@/components/portfolio/ProjectGrid';
@@ -30,8 +30,7 @@ interface PortfolioPageProps {
 export default async function PortfolioPage({ searchParams }: PortfolioPageProps) {
   const params = await searchParams;
   const category = params.category || 'All';
-  const filteredProjects =
-    category === 'All' ? projects : getProjectsByCategory(category);
+  const filteredProjects = await getProjectsByCategory(category);
 
   return (
     <>

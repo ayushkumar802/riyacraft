@@ -69,7 +69,7 @@ export default function AboutPage() {
               <AnimateOnScroll>
                 <div style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden' }}>
                   <Image
-                    src="/images/about/designer-workspace.png"
+                    src="https://didstxzqjqqgyjxr.public.blob.vercel-storage.com/2c5e6066-777a-49cc-96fc-a9d68e106967.jpg"
                     alt="Furniture designer reviewing drawings and material samples in the studio workshop"
                     fill
                     sizes="(max-width: 992px) 100vw, 50vw"
@@ -149,9 +149,9 @@ export default function AboutPage() {
         <div className="container">
           <div className="row text-center g-5">
             {[
-              { number: '50+', label: 'Projects Completed' },
-              { number: '6+', label: 'Years of Experience' },
-              { number: '30+', label: 'Satisfied Clients' },
+              { number: '250+', label: 'Projects Completed' },
+              { number: '16+', label: 'Years of Experience' },
+              { number: '300+', label: 'Satisfied Clients' },
               { number: '100%', label: 'Custom Designed' },
             ].map((stat, index) => (
               <div key={stat.label} className="col-6 col-lg-3">

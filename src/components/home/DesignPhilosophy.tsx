@@ -19,7 +19,7 @@ export function DesignPhilosophy() {
             <AnimateOnScroll>
               <div style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden' }}>
                 <Image
-                  src="/images/about/craftsmanship-detail.png"
+                  src="https://didstxzqjqqgyjxr.public.blob.vercel-storage.com/fdc9e959-6512-474e-b2fa-7080dbabfa00.jpg"
                   alt="Close-up detail of hand-crafted walnut wood joinery showing precision craftsmanship"
                   fill
                   sizes="(max-width: 992px) 100vw, 50vw"

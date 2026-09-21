@@ -5,8 +5,8 @@ import { getFeaturedProjects } from '@/data/projects';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
-export function FeaturedProjects() {
-  const projects = getFeaturedProjects().slice(0, 6);
+export async function FeaturedProjects() {
+  const projects = (await getFeaturedProjects()).slice(0, 6);
 
   return (
     <section className="section" aria-label="Featured projects">

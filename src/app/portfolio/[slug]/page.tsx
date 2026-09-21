@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Calendar, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
-import { projects, getProjectBySlug, getRelatedProjects } from '@/data/projects';
+import { getProjects, getProjectBySlug, getRelatedProjects } from '@/data/projects';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { RelatedProjects } from '@/components/portfolio/RelatedProjects';
 import { CTASection } from '@/components/ui/CTASection';
@@ -15,14 +15,16 @@ interface ProjectPageProps {
 }
 
 export async function generateStaticParams() {
+  const projects = await getProjects();
   return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
+
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getProjectBySlug(slug);
   if (!project) return {};
 
   return {
@@ -56,13 +58,13 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
-  const relatedProjects = getRelatedProjects(slug, 3);
+  const relatedProjects = await getRelatedProjects(slug, 3);
 
   const pageSchema = generateWebPageSchema({
     title: project.title,

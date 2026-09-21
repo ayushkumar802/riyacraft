@@ -1,6 +1,8 @@
 'use server';
 
 import { contactFormSchema, type ContactFormValues } from '@/lib/schemas';
+import { sendContactEmail } from '@/lib/mailer';
+import { SHEET_FETCH_URL, PROJECTS_SHEET_ID } from '@/config/constant';
 
 export interface ContactFormResult {
   success: boolean;
@@ -22,7 +24,6 @@ export async function submitContactForm(
 
     // Honeypot check
     if (data.honeypot && data.honeypot.length > 0) {
-      // Silently succeed for bots
       return { success: true, message: 'Thank you for your inquiry.' };
     }
 
@@ -37,18 +38,26 @@ export async function submitContactForm(
       message: sanitizeString(result.data.message),
     };
 
-    // Log the submission (placeholder for email service integration)
-    console.log('📧 New contact form submission:', {
-      timestamp: new Date().toISOString(),
-      ...sanitized,
-    });
+    console.log('📨 Server received contact form:', sanitized);
 
-    // TODO: Integrate with email service (e.g., SendGrid, Resend, Nodemailer)
-    // await sendEmail({
-    //   to: siteConfig.email,
-    //   subject: `New inquiry from ${sanitized.name}`,
-    //   body: formatEmailBody(sanitized),
-    // });
+    // 1. Send email via Nodemailer
+    await sendContactEmail(sanitized);
+    console.log('✅ Server: Email sent successfully!');
+
+    // 2. Append to Google Sheet (passing sheet ID)
+    // 2. Append to Google Sheet in background (no await, so the user gets instant response)
+    if (SHEET_FETCH_URL) {
+      fetch(`${SHEET_FETCH_URL}?id=${PROJECTS_SHEET_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...sanitized,
+          timestamp: new Date().toISOString(),
+        }),
+      }).catch((sheetErr) => {
+        console.error('Google Sheet background log error:', sheetErr);
+      });
+    }
 
     return {
       success: true,
