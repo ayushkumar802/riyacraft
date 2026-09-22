@@ -30,7 +30,7 @@ export async function submitContactForm(
     // Sanitize input
     const sanitized = {
       name: sanitizeString(result.data.name),
-      email: sanitizeString(result.data.email),
+      email: sanitizeString(result.data.email || ''),
       phone: sanitizeString(result.data.phone),
       city: sanitizeString(result.data.city),
       projectType: sanitizeString(result.data.projectType),

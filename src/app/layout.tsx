@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     default: siteConfig.seo.defaultTitle,
     template: siteConfig.seo.titleTemplate,
   },
+  icons: {
+    icon: "https://didstxzqjqqgyjxr.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-21%20at%208.36.23%20PM.jpeg",
+  },
   description: siteConfig.seo.defaultDescription,
   openGraph: {
     type: 'website',

@@ -7,7 +7,8 @@ export const contactFormSchema = z.object({
     .max(100, 'Name must be under 100 characters'),
   email: z
     .string()
-    .email('Please enter a valid email address'),
+    .email('Please enter a valid email address')
+    .optional(),
   phone: z
     .string()
     .min(7, 'Please enter a valid phone number')
@@ -44,10 +45,11 @@ export const projectTypes = [
 ] as const;
 
 export const budgetRanges = [
-  'Under ₹50,000',
+  'Under ₹15,000',
+  '15,000 – ₹25,000',
+  '₹25,000 – ₹50,000',
   '₹50,000 – ₹1,00,000',
-  '₹1,00,000 – ₹2,50,000',
-  '₹2,50,000 – ₹5,00,000',
+  '₹1,00,000 - ₹5,00,000',
   '₹5,00,000+',
   'Not sure yet',
 ] as const;

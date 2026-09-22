@@ -1,5 +1,5 @@
 import { siteConfig } from '@/config/site';
-import type { BlogPost, BreadcrumbItem, Service } from '@/types';
+import type {BreadcrumbItem, Service } from '@/types';
 
 export function generateOrganizationSchema() {
   return {
@@ -89,29 +89,6 @@ export function generateServiceSchema(service: Service) {
       name: area,
     })),
     url: `${siteConfig.url}/services`,
-  };
-}
-
-export function generateArticleSchema(post: BlogPost) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt,
-    image: `${siteConfig.url}${post.featuredImage}`,
-    datePublished: post.publishedDate,
-    dateModified: post.updatedDate || post.publishedDate,
-    author: {
-      '@type': 'Person',
-      name: post.author,
-    },
-    publisher: {
-      '@id': `${siteConfig.url}/#organization`,
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${siteConfig.url}/blog/${post.slug}`,
-    },
   };
 }
 

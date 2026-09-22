@@ -52,20 +52,6 @@ export interface Testimonial {
   location?: string;
 }
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  author: string;
-  publishedDate: string;
-  updatedDate?: string;
-  featuredImage: string;
-  featuredImageAlt: string;
-  category: string;
-  tags: string[];
-  readingTime: number;
-}
 
 export interface ContactFormData {
   name: string;
