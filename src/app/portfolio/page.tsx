@@ -1,25 +1,37 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { siteConfig } from '@/config/site';
-import { getProjects, getProjectsByCategory } from '@/data/projects';
+import { getProjectsByCategory } from '@/data/projects';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { PortfolioFilters } from '@/components/portfolio/PortfolioFilters';
 import { ProjectGrid } from '@/components/portfolio/ProjectGrid';
 import { CTASection } from '@/components/ui/CTASection';
 
+const pageTitle = 'Wooden Furniture Portfolio in Ranchi';
+const pageDescription =
+  'Explore custom wooden furniture and woodwork projects by RiyaCrafts in Ranchi, Jharkhand. Residential and commercial furniture designed with precision and craft.';
+
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description:
-    'Explore our furniture design portfolio — custom residential and commercial furniture projects designed with precision, purpose, and craft.',
+  title: pageTitle,
+  description: pageDescription,
   alternates: {
     canonical: '/portfolio',
   },
   openGraph: {
-    title: 'Portfolio | ' + siteConfig.name,
-    description:
-      'Explore our furniture design portfolio — custom residential and commercial furniture projects.',
-    url: `${siteConfig.url}/portfolio`,
-    images: [{ url: siteConfig.seo.ogImage }],
+    type: 'website',
+    locale: 'en_IN',
+    siteName: siteConfig.name,
+    title: `${pageTitle} | ${siteConfig.name}`,
+    description: pageDescription,
+    url: '/portfolio',
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
 };
 
@@ -37,10 +49,11 @@ export default async function PortfolioPage({ searchParams }: PortfolioPageProps
       <div className="page-header">
         <div className="container">
           <Breadcrumbs items={[{ label: 'Portfolio' }]} />
-          <h1 className="page-header-title">Our Portfolio</h1>
+          <h1 className="page-header-title">Our Wooden Furniture Portfolio</h1>
           <p className="page-header-subtitle">
-            A collection of furniture design projects across residential and
-            commercial spaces — each designed with intention and craft.
+            A collection of custom wooden furniture and woodwork projects for
+            homes and commercial spaces in Ranchi — each designed with
+            intention and craft.
           </p>
         </div>
       </div>

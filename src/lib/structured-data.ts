@@ -1,30 +1,62 @@
 import { siteConfig } from '@/config/site';
-import type {BreadcrumbItem, Service } from '@/types';
+import type { BreadcrumbItem, Service } from '@/types';
 
 export function generateOrganizationSchema() {
+  const sameAs = Object.values(siteConfig.socialLinks).filter(Boolean);
+
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'FurnitureStore',
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
-    description: siteConfig.description,
+    description: siteConfig.seo.defaultDescription,
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
     image: `${siteConfig.url}${siteConfig.seo.ogImage}`,
-    logo: `${siteConfig.url}/images/logo.png`,
     address: {
       '@type': 'PostalAddress',
+      // TODO: add streetAddress once you have the real workshop/shop address
       addressLocality: siteConfig.address.city,
       addressRegion: siteConfig.address.state,
-      addressCountry: siteConfig.address.country,
+      postalCode: '834001', // Ranchi main pincode, replace with the exact one later
+      addressCountry: 'IN',
     },
     areaServed: siteConfig.serviceAreas.map((area) => ({
       '@type': 'City',
       name: area,
     })),
-    sameAs: Object.values(siteConfig.socialLinks).filter(Boolean),
-    priceRange: '$$',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+        ],
+        opens: '09:00',
+        closes: '19:00',
+      },
+    ],
+    knowsAbout: [
+      'Custom wooden furniture',
+      'Woodwork',
+      'Carpentry',
+      'Furniture design',
+      'Modular furniture',
+      'Modular kitchen',
+      'Bedroom furniture',
+      'Living room furniture',
+      'Office furniture',
+      'Residential furniture',
+      'Commercial furniture',
+    ],
+    priceRange: '₹₹',
+    // Only included once you add real social profile links in site.ts
+    ...(sameAs.length > 0 ? { sameAs } : {}),
   };
 }
 
@@ -35,7 +67,8 @@ export function generateWebSiteSchema() {
     '@id': `${siteConfig.url}/#website`,
     name: siteConfig.name,
     url: siteConfig.url,
-    description: siteConfig.description,
+    description: siteConfig.seo.defaultDescription,
+    inLanguage: 'en-IN',
     publisher: {
       '@id': `${siteConfig.url}/#organization`,
     },
@@ -92,6 +125,7 @@ export function generateServiceSchema(service: Service) {
   };
 }
 
+// Not used on the home page. Replace "The Designer" with the real name before using it.
 export function generatePersonSchema() {
   return {
     '@context': 'https://schema.org',

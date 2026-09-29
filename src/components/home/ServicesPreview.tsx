@@ -4,21 +4,21 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const previewServices = [
   {
-    title: 'Custom Furniture Design',
+    title: 'Custom Wooden Furniture',
     description:
-      'Bespoke furniture created specifically for your space, requirements and lifestyle.',
+      'Bespoke wooden furniture and custom carpentry made specifically for your space, requirements and lifestyle.',
     Icon: Armchair,
   },
   {
     title: 'Residential Furniture',
     description:
-      'Furniture concepts designed for homes, apartments, villas and luxury residences.',
+      'Bedroom, living room, kitchen and vanity furniture designed for homes, apartments and villas in Ranchi.',
     Icon: Home,
   },
   {
     title: 'Commercial Furniture',
     description:
-      'Furniture solutions for offices, hotels, restaurants, retail and commercial spaces.',
+      'Office furniture and woodwork for offices, hotels, restaurants, retail and commercial spaces.',
     Icon: Building2,
   },
   {
@@ -35,8 +35,8 @@ export function ServicesPreview() {
       <div className="container">
         <SectionHeading
           label="What We Do"
-          title="Our Services"
-          subtitle="From concept to completion, we offer a comprehensive range of furniture design services."
+          title="Wooden Furniture & Woodwork Services in Ranchi"
+          subtitle="From concept to completion, we design and build custom and modular wooden furniture, including modular kitchens, for homes and businesses."
           centered
         />
         <div className="row g-4">

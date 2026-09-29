@@ -10,7 +10,9 @@ import { Testimonials } from '@/components/home/Testimonials';
 import { HomeCTA } from '@/components/home/HomeCTA';
 
 export const metadata: Metadata = {
-  title: siteConfig.seo.defaultTitle,
+  // "absolute" skips the layout's "%s | RiyaCrafts" template,
+  // otherwise the brand name would appear twice in the title.
+  title: { absolute: siteConfig.seo.defaultTitle },
   description: siteConfig.seo.defaultDescription,
   alternates: {
     canonical: '/',

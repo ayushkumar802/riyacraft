@@ -33,13 +33,12 @@ export const metadata: Metadata = {
     default: siteConfig.seo.defaultTitle,
     template: siteConfig.seo.titleTemplate,
   },
-  icons: {
-    icon: "https://didstxzqjqqgyjxr.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-21%20at%208.36.23%20PM.jpeg",
-  },
   description: siteConfig.seo.defaultDescription,
+  // Favicon: place icon.png (512x512) and apple-icon.png (180x180) in src/app/
+  // Next.js picks them up automatically, so no `icons` block is needed.
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_IN',
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: siteConfig.seo.defaultTitle,
@@ -71,9 +70,13 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: siteConfig.url,
+    canonical: '/',
   },
 };
+
+// Escape "<" so the JSON can never break out of the script tag
+const jsonLd = (data: unknown) =>
+  JSON.stringify(data).replace(/</g, '\\u003c');
 
 export default function RootLayout({
   children,
@@ -86,13 +89,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationSchema()),
+            __html: jsonLd(generateOrganizationSchema()),
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateWebSiteSchema()),
+            __html: jsonLd(generateWebSiteSchema()),
           }}
         />
       </head>

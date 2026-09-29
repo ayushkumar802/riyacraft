@@ -12,7 +12,7 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 const reasons = [
   {
     title: 'Custom-Designed Furniture',
-    description: 'Every piece is designed specifically for your space and requirements.',
+    description: 'Every wooden piece is designed specifically for your space and requirements.',
     Icon: PenTool,
   },
   {
@@ -22,7 +22,7 @@ const reasons = [
   },
   {
     title: 'Attention to Detail',
-    description: 'From material selection to finish, every detail is carefully considered.',
+    description: 'From choosing the right wood to the final finish, every detail is carefully considered.',
     Icon: Eye,
   },
   {
@@ -48,8 +48,8 @@ export function WhyChooseUs() {
       <div className="container">
         <SectionHeading
           label="Why Us"
-          title="Why Choose Us"
-          subtitle="We combine design expertise with a practical, client-focused approach."
+          title="Why Choose RiyaCrafts for Woodwork in Ranchi"
+          subtitle="We combine design expertise with quality craftsmanship and a practical, client-focused approach."
           centered
         />
         <div className="row g-4">

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 import { getFeaturedProjects } from '@/data/projects';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
@@ -13,8 +14,8 @@ export async function FeaturedProjects() {
       <div className="container">
         <SectionHeading
           label="Portfolio"
-          title="Selected Work"
-          subtitle="A curated selection of furniture design projects across residential and commercial spaces."
+          title="Selected Wooden Furniture Projects"
+          subtitle="A curated selection of custom wooden furniture and woodwork projects for homes and commercial spaces in Ranchi and beyond."
           centered
         />
         <div className="row g-4">
@@ -31,7 +32,7 @@ export async function FeaturedProjects() {
                   <div className="project-card-image">
                     <Image
                       src={project.coverImage}
-                      alt={project.title}
+                      alt={`${project.title}, ${project.category} furniture project by ${siteConfig.name}`}
                       fill
                       sizes={index < 2 ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 768px) 100vw, 33vw'}
                       style={{ objectFit: 'cover' }}
