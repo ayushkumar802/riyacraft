@@ -12,7 +12,7 @@ const previewServices = [
   {
     title: 'Residential Furniture',
     description:
-      'Bedroom, living room, kitchen and vanity furniture designed for homes, apartments and villas in Ranchi.',
+      'Bedroom, living room, kitchen and vanity furniture designed for homes, apartments and villas in Pune.',
     Icon: Home,
   },
   {
@@ -35,7 +35,7 @@ export function ServicesPreview() {
       <div className="container">
         <SectionHeading
           label="What We Do"
-          title="Wooden Furniture & Woodwork Services in Ranchi"
+          title="Wooden Furniture & Woodwork Services in Pune"
           subtitle="From concept to completion, we design and build custom and modular wooden furniture, including modular kitchens, for homes and businesses."
           centered
         />
@@ -56,6 +56,12 @@ export function ServicesPreview() {
             </div>
           ))}
         </div>
+        <p className="text-center mt-5 mx-auto" style={{ maxWidth: '720px' }}>
+          Looking for the best carpenter or furniture maker near you in Pune?
+          RiyaCrafts builds custom wooden furniture, modular furniture and
+          woodwork for homes and offices across Pune. Get in touch to discuss
+          your project.
+        </p>
       </div>
     </section>
   );

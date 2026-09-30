@@ -34,6 +34,25 @@ export const metadata: Metadata = {
     template: siteConfig.seo.titleTemplate,
   },
   description: siteConfig.seo.defaultDescription,
+  keywords: [
+    'furniture maker in Pune',
+    'best furniture maker near me',
+    'carpenter in Pune',
+    'best carpenter near me',
+    'top carpenter in Pune',
+    'custom wooden furniture Pune',
+    'wooden furniture maker Pune',
+    'woodwork Pune',
+    'modular furniture Pune',
+    'modular kitchen Pune',
+    'bedroom furniture Pune',
+    'office furniture Pune',
+    'carpenter near me',
+    'furniture maker near me',
+  ],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   // Favicon: place icon.png (512x512) and apple-icon.png (180x180) in src/app/
   // Next.js picks them up automatically, so no `icons` block is needed.
   openGraph: {

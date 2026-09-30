@@ -15,7 +15,7 @@ export async function FeaturedProjects() {
         <SectionHeading
           label="Portfolio"
           title="Selected Wooden Furniture Projects"
-          subtitle="A curated selection of custom wooden furniture and woodwork projects for homes and commercial spaces in Ranchi and beyond."
+          subtitle="A curated selection of custom wooden furniture and woodwork projects for homes and commercial spaces in Pune and beyond."
           centered
         />
         <div className="row g-4">

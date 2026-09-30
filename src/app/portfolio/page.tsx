@@ -7,16 +7,18 @@ import { PortfolioFilters } from '@/components/portfolio/PortfolioFilters';
 import { ProjectGrid } from '@/components/portfolio/ProjectGrid';
 import { CTASection } from '@/components/ui/CTASection';
 
-const pageTitle = 'Wooden Furniture Portfolio in Ranchi';
+const pageTitle = 'Wooden Furniture Portfolio in Pune';
 const pageDescription =
-  'Explore custom wooden furniture and woodwork projects by RiyaCrafts in Ranchi, Jharkhand. Residential and commercial furniture designed with precision and craft.';
+  'Explore custom wooden furniture and woodwork projects by RiyaCrafts in Pune, Maharashtra. Residential and commercial furniture designed with precision and craft.';
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: pageTitle, // layout template adds " | RiyaCrafts"
   description: pageDescription,
   alternates: {
+    // Filtered URLs like /portfolio?category=Sofas all point to this one page
     canonical: '/portfolio',
   },
+  // A page-level openGraph replaces the layout's entirely, so repeat the shared fields
   openGraph: {
     type: 'website',
     locale: 'en_IN',
@@ -52,7 +54,7 @@ export default async function PortfolioPage({ searchParams }: PortfolioPageProps
           <h1 className="page-header-title">Our Wooden Furniture Portfolio</h1>
           <p className="page-header-subtitle">
             A collection of custom wooden furniture and woodwork projects for
-            homes and commercial spaces in Ranchi — each designed with
+            homes and commercial spaces in Pune — each designed with
             intention and craft.
           </p>
         </div>

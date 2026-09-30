@@ -19,7 +19,7 @@ export function generateOrganizationSchema() {
       // TODO: add streetAddress once you have the real workshop/shop address
       addressLocality: siteConfig.address.city,
       addressRegion: siteConfig.address.state,
-      postalCode: '834001', // Ranchi main pincode, replace with the exact one later
+      postalCode: '411001', // Pune main pincode, replace with the exact one later
       addressCountry: 'IN',
     },
     areaServed: siteConfig.serviceAreas.map((area) => ({
@@ -45,6 +45,8 @@ export function generateOrganizationSchema() {
       'Custom wooden furniture',
       'Woodwork',
       'Carpentry',
+      'Carpenter in Pune',
+      'Furniture maker in Pune',
       'Furniture design',
       'Modular furniture',
       'Modular kitchen',

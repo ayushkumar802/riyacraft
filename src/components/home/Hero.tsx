@@ -16,14 +16,15 @@ export function Hero() {
       <div className="hero-overlay" aria-hidden="true" />
       <div className="container">
         <div className="hero-content">
-          <span className="hero-label">Custom Woodwork Studio in Ranchi</span>
+          <span className="hero-label">Carpenter & Furniture Maker in Pune</span>
           <h1 className="hero-title">
-            Custom Wooden Furniture in Ranchi, Designed Around the Way You Live.
+            Custom Wooden Furniture in Pune, Designed Around the Way You Live.
           </h1>
           <p className="hero-subtitle">
-            Thoughtful, functional and distinctive wooden furniture, modular
-            furniture and woodwork for homes, offices and commercial spaces
-            across Ranchi and Jharkhand.
+            A trusted carpenter and furniture maker in Pune. Thoughtful,
+            functional and distinctive wooden furniture, modular furniture and
+            woodwork for homes, offices and commercial spaces across Pune and
+            Maharashtra.
           </p>
           <div className="hero-buttons">
             <Link href="/portfolio" className="btn btn-primary btn-lg">

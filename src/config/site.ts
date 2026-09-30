@@ -5,14 +5,15 @@ export const siteConfig: SiteConfig = {
   tagline: 'Furniture Designed Around the Way You Live',
   description:
     'Thoughtful, functional and distinctive furniture design for residential and commercial spaces. Custom furniture, 3D visualization, and design consultation.',
-  // No trailing slash. Make sure NEXT_PUBLIC_SITE_URL on Vercel has none either.
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://riyacrafts.com',
+  // Must match the primary domain in Vercel (www). No trailing slash.
+  // NEXT_PUBLIC_SITE_URL on Vercel must be the same value.
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.riyacrafts.com',
   email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || 'sachin9028273127@gmail.com',
   phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || '+91 9028273127',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+91 9028273127',
   address: {
-    city: 'Ranchi',
-    state: 'Jharkhand',
+    city: 'Pune',
+    state: 'Maharashtra',
     country: 'India',
   },
   socialLinks: {
@@ -23,14 +24,13 @@ export const siteConfig: SiteConfig = {
   },
   seo: {
     titleTemplate: '%s | RiyaCrafts',
-    defaultTitle: 'RiyaCrafts | Custom Wooden Furniture & Woodwork in Ranchi',
+    defaultTitle: 'RiyaCrafts | Custom Wooden Furniture & Carpenter in Pune',
     defaultDescription:
-      'Custom wooden furniture and woodwork in Ranchi, Jharkhand. RiyaCrafts designs and builds bespoke furniture for homes and offices. Book a design consultation.',
+      'Furniture maker and carpenter in Pune, Maharashtra. RiyaCrafts builds custom wooden furniture and woodwork for homes and offices. Get in touch today.',
     ogImage: '/images/hero/hero-living-room.png',
   },
   serviceAreas: [
-    'Ranchi',
-    'Hazaribag',
+    'Pune',
   ],
   businessHours: 'Monday – Saturday, 9:00 AM – 7:00 PM',
 };

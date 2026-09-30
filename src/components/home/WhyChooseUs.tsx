@@ -48,7 +48,7 @@ export function WhyChooseUs() {
       <div className="container">
         <SectionHeading
           label="Why Us"
-          title="Why Choose RiyaCrafts for Woodwork in Ranchi"
+          title="Why Choose RiyaCrafts for Woodwork in Pune"
           subtitle="We combine design expertise with quality craftsmanship and a practical, client-focused approach."
           centered
         />

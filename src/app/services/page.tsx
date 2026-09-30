@@ -7,9 +7,9 @@ import { ProcessSection } from '@/components/home/ProcessSection';
 import { CTASection } from '@/components/ui/CTASection';
 import { generateServiceSchema } from '@/lib/structured-data';
 
-const pageTitle = 'Wooden Furniture & Woodwork Services in Ranchi';
+const pageTitle = 'Wooden Furniture & Woodwork Services in Pune';
 const pageDescription =
-  'Custom wooden furniture and woodwork services in Ranchi, Jharkhand: residential and commercial furniture, 3D visualization and design consultation.';
+  'Custom wooden furniture and woodwork services in Pune, Maharashtra: residential and commercial furniture, 3D visualization and design consultation.';
 
 export const metadata: Metadata = {
   title: pageTitle, // layout template adds " | RiyaCrafts"
@@ -59,10 +59,10 @@ export default function ServicesPage() {
             Our Wooden Furniture &amp; Woodwork Services
           </h1>
           <p className="page-header-subtitle">
-            From initial concept to finished piece, we design and build custom
+            As a carpenter and furniture maker in Pune, we design and build custom
             and modular wooden furniture, including bedroom, living room,
-            kitchen and office furniture, for homes and businesses in Ranchi
-            and across Jharkhand.
+            kitchen and office furniture, for homes and businesses in Pune
+            and across Maharashtra.
           </p>
         </div>
       </div>
